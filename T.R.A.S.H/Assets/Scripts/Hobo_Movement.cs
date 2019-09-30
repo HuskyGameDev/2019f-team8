@@ -7,8 +7,7 @@ public class Hobo_Movement : MonoBehaviour
     public bool playerDirectionRight = true;
     public float moveXAxis;
     public float moveYAxis;
-    public int playerMovementSpeed = 10;
-    Vector2 playerSize;
+    public int playerMovementSpeed = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -19,24 +18,22 @@ public class Hobo_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    //Holds movement controls, animations, character physics
-    void PlayerMove()
-    {
-        int movespeed = playerMovementSpeed;
-        moveXAxis = Input.GetAxis("Horizontal");
-        moveYAxis = Input.GetAxis("Vertical");
-        if (moveXAxis > 0.0f && playerDirectionRight == false)
+        if (Input.GetKey(KeyCode.W))
         {
-            FlipSprite();
+            transform.position += new Vector3 (0.0f, playerMovementSpeed * Time.deltaTime);
         }
-        if (moveXAxis < 0.0f && playerDirectionRight == true)
+        if (Input.GetKey(KeyCode.A))
         {
-            FlipSprite();
+            transform.position -= new Vector3(playerMovementSpeed * Time.deltaTime, 0.0f);
         }
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveXAxis * movespeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position -= new Vector3(0.0f, playerMovementSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += new Vector3(playerMovementSpeed * Time.deltaTime, 0.0f);
+        }
     }
 
     //Flips player sprite when changing directions, left and right.
