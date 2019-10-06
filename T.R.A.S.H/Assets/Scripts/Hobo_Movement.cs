@@ -7,7 +7,7 @@ public class Hobo_Movement : MonoBehaviour
     public bool playerDirectionRight = true;
     public float moveXAxis;
     public float moveYAxis;
-    public int playerMovementSpeed = 2;
+    public int playerMovementSpeed = 6;
 
     // Start is called before the first frame update
     void Start()
