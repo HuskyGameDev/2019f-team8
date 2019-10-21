@@ -44,4 +44,9 @@ public class Hobo_Movement : MonoBehaviour
         direction.x *= -1;
         transform.localScale = direction;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
+    }
 }
