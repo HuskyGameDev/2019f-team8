@@ -15,30 +15,52 @@ public class Hobo_Health : MonoBehaviour
         currentHealth = totalHealth;    // start the current health to the total health
         healthPercentage = (currentHealth / totalHealth) * 100; // set healthPercentage
     }
+    // Update function that adjusts the health percentage
     void UpdatePercentage()
     {
         healthPercentage = (currentHealth / totalHealth) * 100;
     }
+    // function to reduce the health by a standard amount
     void ReduceHealth()
     {
-        if (totalHealth <= 0)
+        if (totalHealth <= 0 || currentHealth <= 0)
         {
             return;
         }
-        // how much the health changes is placeholder atm
-        currentHealth = currentHealth - 0.01;
+        currentHealth = currentHealth - 0.1;
         UpdatePercentage();
     }
 
+    // function to reduce the health by a specific amount of damage
     void ReduceHealth(double damageCoefficient)
     {
-        if (totalHealth <= 0)
+        if (totalHealth <= 0 || currentHealth <= 0)
         {
             return;
         }
-        // how much the health changes here is also placeholder atm
-        currentHealth = currentHealth - (damageCoefficient * 0.01);
+        currentHealth = currentHealth - (damageCoefficient * 0.1);
         UpdatePercentage();
+    }
+
+    // function to heal by a standard amount
+    void increaseHealth()
+    {
+        if(currentHealth >= totalHealth)
+        {
+            return;
+        }
+        currentHealth = currentHealth + 0.1;
+        UpdatePercentage();
+    }
+
+    // function to heal by a specific amount
+    void increaseHealth(double healCoefficient)
+    {
+        if(currentHealth >= totalHealth)
+        {
+            return;
+        }
+        currentHealth = currentHealth + (healCoefficient * 0.1);
     }
     // Update is called once per frame
     void Update()
