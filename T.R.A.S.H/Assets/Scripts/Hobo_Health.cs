@@ -8,6 +8,7 @@ public class Hobo_Health : MonoBehaviour
     public bool isInvulnerable = false; // For invulnerability powerup
     private double totalHealth;         // Hobo Max Health
     private double healthPercentage;    // Percentage of health 
+    private int projectileDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +69,13 @@ public class Hobo_Health : MonoBehaviour
             return;
         }
         currentHealth = currentHealth + (healCoefficient * 0.1);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "trashbag")
+        {
+            ReduceHealth(15);
+        }
     }
     // Update is called once per frame
     void Update()

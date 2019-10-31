@@ -13,9 +13,9 @@ public class Crane_Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Projectile = Resources.Load("Projectile") as GameObject; // Update according to prefab projectile location
+        Projectile = Resources.Load("trashbag") as GameObject; // Update according to prefab projectile location
         projectileSpeed = 3.5f; // Speed of projectile (increase for faster projectiles)
-        fireRate = 1F; // Length of cooldown timer (increase for more delay between shots)
+        fireRate = 0.25F; // Length of cooldown timer (increase for more delay between shots)
         nextFire = 0F; // Container for cooldown timer
     }
 
