@@ -7,7 +7,7 @@ public class Crane_Projectile : MonoBehaviour
     /* Variable declarations */
     public GameObject Projectile;
     float projectileSpeed;
-    public float fireRate;
+    float fireRate;
     float nextFire;
 
     // Start is called before the first frame update
@@ -39,11 +39,4 @@ public class Crane_Projectile : MonoBehaviour
             Destroy(projectile, 5f);
         }      
     }
-
-    public IEnumerator StopSlowDown()
-    {
-        yield return new WaitForSeconds(5.0f);
-        fireRate = 1.0f;
-    }
-
 }

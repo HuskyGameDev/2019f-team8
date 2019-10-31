@@ -5,7 +5,6 @@ using UnityEngine;
 public class Hobo_Health : MonoBehaviour
 {
     public double currentHealth;        // Current accessible health of Hobo      
-    public bool isInvulnerable = false; // For invulnerability powerup
     private double totalHealth;         // Hobo Max Health
     private double healthPercentage;    // Percentage of health 
 
@@ -24,29 +23,23 @@ public class Hobo_Health : MonoBehaviour
     // function to reduce the health by a standard amount
     void ReduceHealth()
     {
-        if (!isInvulnerable)
+        if (totalHealth <= 0 || currentHealth <= 0)
         {
-            if (totalHealth <= 0 || currentHealth <= 0)
-            {
-                return;
-            }
-            currentHealth = currentHealth - 0.1;
-            UpdatePercentage();
+            return;
         }
+        currentHealth = currentHealth - 0.1;
+        UpdatePercentage();
     }
 
     // function to reduce the health by a specific amount of damage
     void ReduceHealth(double damageCoefficient)
     {
-        if (!isInvulnerable)
+        if (totalHealth <= 0 || currentHealth <= 0)
         {
-            if (totalHealth <= 0 || currentHealth <= 0)
-            {
-                return;
-            }
-            currentHealth = currentHealth - (damageCoefficient * 0.1);
-            UpdatePercentage();
+            return;
         }
+        currentHealth = currentHealth - (damageCoefficient * 0.1);
+        UpdatePercentage();
     }
 
     // function to heal by a standard amount
@@ -73,16 +66,5 @@ public class Hobo_Health : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void setInvuln()
-    {
-        isInvulnerable = true;
-    }
-
-    public IEnumerator StopInvuln()
-    {
-        yield return new WaitForSeconds(5.0f);
-        isInvulnerable = false;
     }
 }
