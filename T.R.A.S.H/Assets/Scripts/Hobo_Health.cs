@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Hobo_Health : MonoBehaviour
 {
@@ -21,33 +23,39 @@ public class Hobo_Health : MonoBehaviour
     void UpdatePercentage()
     {
         healthPercentage = (currentHealth / totalHealth) * 100;
+        if(healthPercentage <= 0)
+        {
+            restart();
+        }
     }
-    // function to reduce the health by a standard amount
+     //function to reduce the health by a standard amount
     void ReduceHealth()
     {
-        if (!isInvulnerable)
+        if (isInvulnerable == false)
         {
             if (totalHealth <= 0 || currentHealth <= 0)
             {
                 return;
             }
-            currentHealth = currentHealth - 0.1;
+            currentHealth = currentHealth - 10;
             UpdatePercentage();
         }
+        return;
     }
 
     // function to reduce the health by a specific amount of damage
     void ReduceHealth(double damageCoefficient)
     {
-        if (!isInvulnerable)
+        if (isInvulnerable == false)
         {
             if (totalHealth <= 0 || currentHealth <= 0)
             {
                 return;
             }
-            currentHealth = currentHealth - (damageCoefficient * 0.1);
+            currentHealth = currentHealth - damageCoefficient;
             UpdatePercentage();
         }
+        return;
     }
 
     // function to heal by a standard amount
@@ -70,13 +78,21 @@ public class Hobo_Health : MonoBehaviour
         }
         currentHealth = currentHealth + (healCoefficient * 0.1);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "trashbag")
+        if (collision.collider.CompareTag("Bullet"))
         {
-            ReduceHealth(15);
+            currentHealth = currentHealth - 15.0;
+            UpdatePercentage();
         }
     }
+
+    void restart()
+    {
+        SceneManager.LoadScene("Samplescene");
+    }
+
     // Update is called once per frame
     void Update()
     {

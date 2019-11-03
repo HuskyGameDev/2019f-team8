@@ -21,7 +21,7 @@ public class Crane_Projectile : MonoBehaviour
         projectileCode = 1;
 
         projectileSpeed = 3.5f; // Speed of projectile (increase for faster projectiles)
-        fireRate = 1.0F; // Length of cooldown timer (increase for more delay between shots)
+        fireRate = .25F; // Length of cooldown timer (increase for more delay between shots)
         nextFire = 0F; // Container for cooldown timer
     }
 
