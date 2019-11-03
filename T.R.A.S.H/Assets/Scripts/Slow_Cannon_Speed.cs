@@ -13,8 +13,8 @@ public class Slow_Cannon_Speed : MonoBehaviour
             if (craneScript)
             {
                 // We speed up the player and then tell to stop after a few seconds
-                craneScript.fireRate = 0.5f;
-                craneScript.StopSlowDown();
+                // craneScript.fireRate = 0.5f;
+                // craneScript.StopSlowDown();
             }
             Destroy(gameObject);
         }

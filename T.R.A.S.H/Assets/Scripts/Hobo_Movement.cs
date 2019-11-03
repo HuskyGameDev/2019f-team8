@@ -36,7 +36,7 @@ public class Hobo_Movement : MonoBehaviour
         }
     }
 
-    //Flips player sprite when changing directions, left and right.
+    // Flips player sprite when changing directions, left and right.
     void FlipSprite()
     {
         playerDirectionRight = !playerDirectionRight;
@@ -45,6 +45,7 @@ public class Hobo_Movement : MonoBehaviour
         transform.localScale = direction;
     }
 
+    // Destroys projectile when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(collision.gameObject);
