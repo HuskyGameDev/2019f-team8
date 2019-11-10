@@ -49,7 +49,10 @@ public class Hobo_Movement : MonoBehaviour
     // Destroys projectile when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        hobo_Health.ReduceHealth(15);
-        Destroy(collision.gameObject);
+        if(collision.tag.Equals("Bullet"))
+        {
+            hobo_Health.ReduceHealth(5);
+            Destroy(collision.gameObject);
+        }
     }
 }
