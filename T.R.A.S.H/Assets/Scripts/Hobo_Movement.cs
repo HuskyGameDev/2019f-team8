@@ -8,6 +8,7 @@ public class Hobo_Movement : MonoBehaviour
     public float moveXAxis;
     public float moveYAxis;
     public int playerMovementSpeed = 6;
+    public Hobo_Health hobo_Health;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class Hobo_Movement : MonoBehaviour
     // Destroys projectile when collision is detected
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        hobo_Health.ReduceHealth(15);
         Destroy(collision.gameObject);
     }
 }

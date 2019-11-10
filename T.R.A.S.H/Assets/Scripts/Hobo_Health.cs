@@ -44,7 +44,7 @@ public class Hobo_Health : MonoBehaviour
     }
 
     // function to reduce the health by a specific amount of damage
-    void ReduceHealth(double damageCoefficient)
+    public void ReduceHealth(double damageCoefficient)
     {
         if (isInvulnerable == false)
         {
@@ -81,8 +81,10 @@ public class Hobo_Health : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Enter Collision");
         if (collision.collider.CompareTag("Bullet"))
         {
+            Debug.Log("Bullet here");
             currentHealth = currentHealth - 15.0;
             UpdatePercentage();
         }
