@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class Hobo_Health : MonoBehaviour
 {
-    public double currentHealth;        // Current accessible health of Hobo      
+    [SerializeField] public double currentHealth;        // Current accessible health of Hobo      
     public bool isInvulnerable = false; // For invulnerability powerup
     private double totalHealth;         // Hobo Max Health
     private double healthPercentage;    // Percentage of health 
     private int projectileDamage;
-
+    [SerializeField] private Text healthText; 
     // Start is called before the first frame update
     void Start()
     {
@@ -96,7 +96,7 @@ public class Hobo_Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        healthText.text = currentHealth.ToString(".00");
     }
 
     public void setInvuln()
