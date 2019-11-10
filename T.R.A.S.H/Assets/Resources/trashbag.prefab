@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6143368616644202757}
   - component: {fileID: 6143368616644202754}
   - component: {fileID: 6143368616644202755}
+  - component: {fileID: 221749546286191778}
   m_Layer: 0
   m_Name: trashbag
   m_TagString: Bullet
@@ -116,6 +117,18 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011268616, y: 0.05509138}
+  m_Offset: {x: 0.0074238777, y: 0.0431962}
   serializedVersion: 2
-  m_Radius: 0.14855766
+  m_Radius: 0.17914534
+--- !u!114 &221749546286191778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143368616644202752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47d833e4c3bfa645b2d20a2cd191929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
