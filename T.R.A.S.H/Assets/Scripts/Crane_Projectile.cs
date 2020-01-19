@@ -37,8 +37,6 @@ public class Crane_Projectile : MonoBehaviour
             {
                 projectileCode = 1;
             }
-
-            SetProjectile(projectileCode);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -48,9 +46,9 @@ public class Crane_Projectile : MonoBehaviour
             {
                 projectileCode = numberOfProjectile;
             }
-
-            SetProjectile(projectileCode);
         }
+
+        SetProjectile(projectileCode);
 
         /* if mouse is clicked and cooldown timer is up */
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
@@ -87,15 +85,34 @@ public class Crane_Projectile : MonoBehaviour
         return Mathf.Rad2Deg * Mathf.Atan2(input1.y - input2.y, input1.x - input2.x);
     }
 
+    void randomProjectileSprite()
+    {
+        /* Get random value between 0 and 1 */
+        Random.Range(0, 1);
+
+        /* 50% chance to set sprite to either option */
+        if(Random.value < 0.5)
+        {
+            Projectile = Resources.Load("trashbag") as GameObject; ;
+        }
+        else
+        {
+            Projectile = Resources.Load("cardoor") as GameObject; ;
+        }
+    }
+
+    // 
     void SetProjectile(int projectileCode)
     {
         if(projectileCode == 1)
         {
-            Projectile = Resources.Load("trashbag") as GameObject;
+            randomProjectileSprite();
         }
         else if(projectileCode == 2)
         {
-            Projectile = Resources.Load("cardoor") as GameObject;
+            randomProjectileSprite(); // remove when the below line is complete
+
+            // Projectile = Resources.Load("// Full Car Object Name (Not Yet Added)") as GameObject;
         }
     }
 }
