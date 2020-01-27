@@ -5,23 +5,30 @@ using UnityEngine;
 public class Crane_Projectile : MonoBehaviour
 {
     /* Variable declarations */
-    public GameObject Projectile;
-    float projectileSpeed;
+    public static GameObject Projectile;
+    public static AudioSource projectileAudio;
+    public static AudioClip audioClip1; 
+    public static AudioClip audioClip2;
+    public static AudioClip audioClip3;
     public float fireRate;
-    float nextFire;
-    float angleOfRotation;
     public int projectileCode;
-
+    float angleOfRotation;
+    float nextFire;
+    float projectileSpeed;
     int numberOfProjectile = 2; // Update to current count of projectiles if changed
 
     // Start is called before the first frame update
     void Start()
     {
+        projectileAudio = GetComponent<AudioSource>();
+        audioClip1 = Resources.Load<AudioClip>("cannonNoise");
+        audioClip2 = Resources.Load<AudioClip>("trashbagNoise");
+        audioClip3 = Resources.Load<AudioClip>("cardoorNoise");
         Projectile = Resources.Load("trashbag") as GameObject; // Update according to prefab projectile location
         projectileCode = 1;
 
         projectileSpeed = 3.5f; // Speed of projectile (increase for faster projectiles)
-        fireRate = .25F; // Length of cooldown timer (increase for more delay between shots)
+        fireRate = .5F; // Length of cooldown timer (increase for more delay between shots)
         nextFire = 0F; // Container for cooldown timer
     }
 
@@ -48,11 +55,12 @@ public class Crane_Projectile : MonoBehaviour
             }
         }
 
-        SetProjectile(projectileCode);
-
         /* if mouse is clicked and cooldown timer is up */
         if (Input.GetMouseButtonDown(0) && Time.time > nextFire)
         {
+            projectileAudio.PlayOneShot(audioClip1);
+            SetProjectile(projectileCode);
+
             /* Reset cooldown timer */
             nextFire = Time.time + fireRate;
 
@@ -113,6 +121,18 @@ public class Crane_Projectile : MonoBehaviour
             randomProjectileSprite(); // remove when the below line is complete
 
             // Projectile = Resources.Load("// Full Car Object Name (Not Yet Added)") as GameObject;
+        }
+    }
+
+    public static void playAudio(string name)
+    {
+        if (name == "trashbag(Clone)")
+        {
+            projectileAudio.PlayOneShot(audioClip2);
+        }
+        else if (name == "cardoor(Clone)")
+        {
+            projectileAudio.PlayOneShot(audioClip3);
         }
     }
 }

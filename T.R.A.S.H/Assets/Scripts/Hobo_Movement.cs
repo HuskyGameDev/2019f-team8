@@ -52,6 +52,7 @@ public class Hobo_Movement : MonoBehaviour
         if(collision.tag.Equals("Bullet"))
         {
             hobo_Health.ReduceHealth(5);
+            Crane_Projectile.playAudio(collision.gameObject.name);
             Destroy(collision.gameObject);
         }
     }
