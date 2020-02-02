@@ -600,8 +600,9 @@ GameObject:
   - component: {fileID: 582497783}
   - component: {fileID: 582497782}
   - component: {fileID: 582497781}
+  - component: {fileID: 582497785}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: OptionsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,6 +693,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &582497785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582497780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6986b03733fb5f54aa88ad11166466ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &597575750
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +718,7 @@ GameObject:
   - component: {fileID: 597575753}
   - component: {fileID: 597575752}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btn_options_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -773,7 +786,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597575753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 582497785}
+        m_MethodName: GoToMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597575753
 MonoBehaviour:
   m_ObjectHideFlags: 0
