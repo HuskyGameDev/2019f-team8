@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Slow_Cannon_Speed : MonoBehaviour
+public class Slow_Cannon_Speed : Powerup 
 {
     void OnTriggerEnter2D(Collider2D other)
     {
