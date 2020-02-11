@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// THIS FILE RESULTS IN COMPILATION ERRORS. PLEASE FIX BEFORE UNCOMMENTING.
 
+/*
 public class Slow_Cannon_Speed : Powerup 
 {
     void OnTriggerEnter2D(Collider2D other)
@@ -20,3 +22,4 @@ public class Slow_Cannon_Speed : Powerup
         }
     }
 }
+*/

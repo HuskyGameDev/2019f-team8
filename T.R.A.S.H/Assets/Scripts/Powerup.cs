@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// THIS FILE RESULTS IN COMPILATION ERRORS. PLEASE FIX BEFORE UNCOMMENTING.
+
+/*
 public interface Powerup : MonoBehaviour
 {
     
@@ -20,3 +23,4 @@ public interface Powerup : MonoBehaviour
     }
     
 }
+*/
