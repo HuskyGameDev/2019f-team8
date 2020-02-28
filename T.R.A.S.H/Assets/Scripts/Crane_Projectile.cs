@@ -115,14 +115,6 @@ public class Crane_Projectile : MonoBehaviour
         }
     }
 
-    /*
-    public IEnumerator StopSlowDown()
-    {
-        yield return new WaitForSeconds(5.0f);
-        fireRate = 1.0f;
-    }
-    */
-
     float AngleBetweenCraneAndMouse(Vector2 input1, Vector2 input2)
     {
         return Mathf.Rad2Deg * Mathf.Atan2(input1.y - input2.y, input1.x - input2.x);

@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// THIS FILE RESULTS IN COMPILATION ERRORS. PLEASE FIX BEFORE UNCOMMENTING.
 
-/*
 public class Slow_Cannon_Speed : Powerup 
 {
     void OnTriggerEnter2D(Collider2D other)
@@ -15,11 +13,16 @@ public class Slow_Cannon_Speed : Powerup
             if (craneScript)
             {
                 // We speed up the player and then tell to stop after a few seconds
-                // craneScript.fireRate = 0.5f;
-                // craneScript.StopSlowDown();
+                craneScript.fireRate = 1.0f;
+                SlowDownTimer();
+                craneScript.fireRate = 0.5f;
             }
             Destroy(gameObject);
         }
     }
+
+    public IEnumerator SlowDownTimer()
+    {
+        yield return new WaitForSeconds(5f);
+    }
 }
-*/

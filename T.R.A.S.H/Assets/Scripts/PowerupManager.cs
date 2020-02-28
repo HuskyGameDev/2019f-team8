@@ -1,22 +1,23 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Timers;
-/*
+
 public class PowerupManager : MonoBehaviour
 {
     private static Timer PowerupTimer;
     private List<GameObject> powerups;
     private static int maxPowerups = 4;
-    private static float minX;
-    private static float maxX;
-    private static float minY;
-    private static float maxY;
+    private static float minX = 0;
+    private static float maxX = 1534;
+    private static float minY = 0;
+    private static float maxY = 761;
     private static float interval = 10000.0f;
 
     // Start is called before the first frame update
     void Start()
     {
+        powerups = new List<GameObject>();
         PowerupTimer = new Timer(interval);
         PowerupTimer.Elapsed += new ElapsedEventHandler(spawnPowerup);
         PowerupTimer.Start();
@@ -46,4 +47,4 @@ public class PowerupManager : MonoBehaviour
         }
     }
 }
-*/
+
