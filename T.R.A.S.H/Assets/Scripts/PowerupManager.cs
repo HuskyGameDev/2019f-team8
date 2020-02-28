@@ -32,7 +32,7 @@ public class PowerupManager : MonoBehaviour
 
     void spawnPowerup()
     {
-        if (powerups.Length !>= maxPowerups)
+        if (powerups.Count != maxPowerups)
         {
             Powerup powerup;
             Vector2 spawnPoint = Vector2.zero;
