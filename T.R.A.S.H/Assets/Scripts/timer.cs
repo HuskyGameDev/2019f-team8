@@ -7,10 +7,16 @@ public class timer : MonoBehaviour
     [SerializeField] private Text uiText;
     [SerializeField] private float primaryTimer;
 
+    public GameObject backgroundPrelim;
+    public GameObject background01;
+    public GameObject background02;
+
     private float duration;
     // Booleans to allow counting and start counting
     private bool counting = true;
     private bool doOnce = false;
+    private bool doTwice = false;
+    private bool doThrice = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +37,30 @@ public class timer : MonoBehaviour
         // prevents the timer from going negative
         else if(duration <= 0.0f && !doOnce)
         {
-            counting = false;
+            //counting = false;
             doOnce = true;
-            uiText.text = "0";
-            duration = 0.0f;
+            uiText.text = "60";
+            duration = 60.0f;
+            backgroundPrelim.SetActive(false);
+
+        }
+        else if (duration <= 0.0f && !doTwice)
+        {
+            //counting = false;
+            doTwice = true;
+            uiText.text = "60";
+            duration = 60.0f;
+            background01.active = false;
+
+        }
+        else if (duration <= 0.0f && !doThrice)
+        {
+            //counting = false;
+            doThrice = true;
+            uiText.text = "60";
+            duration = 60.0f;
+            background02.active = false;
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,7 @@ public class Slow_Cannon_Speed : Powerup
                 SlowDownTimer();
                 craneScript.fireRate = 0.5f;
             }
-            Destroy(gameObject);
+            GameObject.Destroy();
         }
     }
 
@@ -26,3 +26,4 @@ public class Slow_Cannon_Speed : Powerup
         yield return new WaitForSeconds(5f);
     }
 }
+*/
