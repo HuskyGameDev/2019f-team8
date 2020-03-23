@@ -30,8 +30,8 @@ public class Crane_Projectile : MonoBehaviour
         Projectile = Resources.Load("trashbag") as GameObject; // Update according to prefab projectile location
         projectileCode = 1;
 
-        projectileSpeed = 3.5f; // Speed of projectile (increase for faster projectiles)
-        fireRate = .5F; // Length of cooldown timer (increase for more delay between shots)
+        projectileSpeed = 7f; // Speed of projectile (increase for faster projectiles)
+        fireRate = .25F; // Length of cooldown timer (increase for more delay between shots)
         nextFire = 0F; // Container for cooldown timer
     }
 
@@ -50,11 +50,11 @@ public class Crane_Projectile : MonoBehaviour
 
             if (projectileCode == 1)
             {
-                fireRate = .5F;
+                fireRate = .25F;
             }
             else if (projectileCode == 2)
             {
-                fireRate = 3F;
+                fireRate = 1.5F;
             }
         }
 
@@ -68,11 +68,11 @@ public class Crane_Projectile : MonoBehaviour
 
             if (projectileCode == 1)
             {
-                fireRate = .5F;
+                fireRate = .25F;
             }
             else if (projectileCode == 2)
             {
-                fireRate = 3F;
+                fireRate = 1.5F;
             }
         }
 
