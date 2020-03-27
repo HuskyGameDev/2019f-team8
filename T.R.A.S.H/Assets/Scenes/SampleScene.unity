@@ -1036,6 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   isInvulnerable: 0
+  healthText: {fileID: 0}
   Currenthealthbar: {fileID: 1849307093}
   Totalhealthbar: {fileID: 948463632}
 --- !u!50 &741602626
@@ -1181,7 +1182,7 @@ GameObject:
   - component: {fileID: 937461513}
   m_Layer: 0
   m_Name: crane_body
-  m_TagString: Cannon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1584,7 +1585,7 @@ GameObject:
   - component: {fileID: 1102159744}
   m_Layer: 0
   m_Name: crane_arm
-  m_TagString: Untagged
+  m_TagString: Cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2746,6 +2747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b34df5c16060740b6d670d7ada54f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiText: {fileID: 0}
   primaryTimer: 60
   backgroundPrelim: {fileID: 0}
   background01: {fileID: 0}
