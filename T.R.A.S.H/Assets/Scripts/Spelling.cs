@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Spelling : MonoBehaviour
+public class Spelling : Powerup
 {
     System.Random rnd = new System.Random();
     private void Start()

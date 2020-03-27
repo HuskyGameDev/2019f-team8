@@ -243,4 +243,9 @@ public class Crane_Projectile : MonoBehaviour
             projectileAudio.PlayOneShot(audioClip3);
         }
     }
+
+    public void changeSpeed(float speed)
+    {
+        fireRate = speed;
+    }
 }

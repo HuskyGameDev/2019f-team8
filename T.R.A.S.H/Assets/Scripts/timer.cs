@@ -22,7 +22,7 @@ public class timer : MonoBehaviour
     void Start()
     {
        // set the duration of the timer to what is in the timerControl text field
-        duration = primaryTimer; 
+       duration = primaryTimer; 
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class timer : MonoBehaviour
             doTwice = true;
             uiText.text = "60";
             duration = 60.0f;
-            background01.active = false;
+            background01.SetActive(false);
 
         }
         else if (duration <= 0.0f && !doThrice)
@@ -59,7 +59,7 @@ public class timer : MonoBehaviour
             doThrice = true;
             uiText.text = "60";
             duration = 60.0f;
-            background02.active = false;
+            background02.SetActive(false);
 
         }
     }

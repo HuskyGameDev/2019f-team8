@@ -4,8 +4,8 @@ using UnityEngine;
 
 // THIS FILE RESULTS IN COMPILATION ERRORS. PLEASE FIX BEFORE UNCOMMENTING.
 
-/*
-public interface Powerup : MonoBehaviour
+
+public class Powerup : MonoBehaviour
 {
     
     Powerup newPowerup(int value)
@@ -18,9 +18,11 @@ public interface Powerup : MonoBehaviour
                 return new Slow_Cannon_Speed();
             case 2:
                 return new Spelling();
+            default:
+                return new Powerup();
         }
         
     }
     
 }
-*/
+

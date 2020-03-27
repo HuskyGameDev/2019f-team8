@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class Hobo_Health : MonoBehaviour
 {
 
@@ -88,7 +89,7 @@ public class Hobo_Health : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Enter Collision");
-        if (collision.collider.CompareTag("Bullet"))
+        if (collision.collider.CompareTag("Bullet") && !isInvulnerable)
         {
             Debug.Log("Bullet here");
             currentHealth = currentHealth - 15.0;
@@ -110,14 +111,8 @@ public class Hobo_Health : MonoBehaviour
 
     }
 
-    public void setInvuln()
+    public void setInvuln(bool invuln)
     {
-        isInvulnerable = true;
-    }
-
-    public IEnumerator StopInvuln()
-    {
-        yield return new WaitForSeconds(5.0f);
-        isInvulnerable = false;
+        isInvulnerable = invuln;
     }
 }

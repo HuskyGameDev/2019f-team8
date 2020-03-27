@@ -1,29 +1,28 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class Slow_Cannon_Speed : Powerup 
 {
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.tag == "Player")
+        if (other.collider.CompareTag("Player"))
         {
-            Crane_Projectile craneScript = other.gameObject.GetComponent<Crane_Projectile>(); // not sure about the syntax here...
-            if (craneScript)
-            {
-                // We speed up the player and then tell to stop after a few seconds
-                craneScript.fireRate = 1.0f;
-                SlowDownTimer();
-                craneScript.fireRate = 0.5f;
-            }
-            GameObject.Destroy();
+
+            StartCoroutine(SlowDownTimer());
+
         }
     }
 
     public IEnumerator SlowDownTimer()
     {
-        yield return new WaitForSeconds(5f);
+        Debug.Log("SlowTimerCannonSpeed");
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Renderer>().enabled = false;
+        GameObject.FindGameObjectWithTag("Cannon").GetComponent<Crane_Projectile>().changeSpeed(1f);
+        yield return new WaitForSeconds(5);
+        GameObject.FindGameObjectWithTag("Cannon").GetComponent<Crane_Projectile>().changeSpeed(.25f);
+        Destroy(gameObject);
     }
 }
-*/
