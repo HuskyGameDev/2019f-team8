@@ -2747,7 +2747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b34df5c16060740b6d670d7ada54f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiText: {fileID: 0}
+  uiText: {fileID: 284048709}
   primaryTimer: 60
   backgroundPrelim: {fileID: 0}
   background01: {fileID: 0}
