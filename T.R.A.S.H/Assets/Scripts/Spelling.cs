@@ -6,18 +6,23 @@ using System;
 public class Spelling : Powerup
 {
     System.Random rnd = new System.Random();
+    char letter;
     private void Start()
     {
-        char letter = (char)rnd.Next(97, 122);
+        letter = (char)rnd.Next(97, 122);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.tag == "Player")
+        if (other.collider.CompareTag("Player"))
         {
-            
 
+            Debug.Log("SpellingPowerup");
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Renderer>().enabled = false;
+            GameObject.FindGameObjectWithTag("PowerupManager").GetComponent<Word_Storage>().addLetter(letter);
             Destroy(gameObject);
+
         }
     }
 }

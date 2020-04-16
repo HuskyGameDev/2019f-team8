@@ -115,4 +115,9 @@ public class Hobo_Health : MonoBehaviour
     {
         isInvulnerable = invuln;
     }
+
+    public void heal()
+    {
+        currentHealth = totalHealth;
+    }
 }
