@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/menu_Main.unity
     guid: aac960174af219f4e9486355b0a7309f
   - enabled: 1
@@ -17,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstCutScene.unity
     guid: 4156fe8f006123d4da98acc1f0c1352f
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/WardenWin.unity
+    guid: f3268165b5e810d4294b7381a7aa5d8b
+  - enabled: 1
+    path: Assets/Scenes/HoboWin1.unity
+    guid: 9074ad98a6f7ade4aac1ea0ab3533423
+  - enabled: 1
+    path: Assets/Scenes/HoboWin2.unity
+    guid: 936cefc8fce627247a5412636792a06e
   m_configObjects: {}

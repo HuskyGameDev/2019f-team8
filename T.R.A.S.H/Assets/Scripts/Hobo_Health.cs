@@ -99,7 +99,7 @@ public class Hobo_Health : MonoBehaviour
 
     void restart()
     {
-        SceneManager.LoadScene("Samplescene");
+        SceneManager.LoadScene("WardenWin");
     }
 
     // Update is called once per frame

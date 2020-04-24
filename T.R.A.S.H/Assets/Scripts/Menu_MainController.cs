@@ -30,6 +30,11 @@ public class Menu_MainController : MonoBehaviour
         SceneManager.LoadScene("cutSceneTemplate");
     }
 
+    public void GoToHobo2()
+    {
+        SceneManager.LoadScene("HoboWin2");
+    }
+
     public void QutiGame()
     {
         Application.Quit();
